@@ -3,7 +3,7 @@ const express = require('express'),
     cors = require('cors'),
     multer = require('multer'),
     bodyParser = require('body-parser');
-    
+
 // File upload settings  
 const PATH = './uploads';
 let storage = multer.diskStorage({
@@ -11,7 +11,8 @@ let storage = multer.diskStorage({
         cb(null, PATH);
     },
     filename: (req, file, cb) => {
-        cb(null, file.fieldname + '-' + Date.now())
+        console.log(file.originalname);
+        cb(null, file.originalname)
     }
 });
 let upload = multer({

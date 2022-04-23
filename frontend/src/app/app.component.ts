@@ -21,7 +21,7 @@ export class AppComponent {
       file.withCredentials = false;
     };
     this.uploader.onCompleteItem = (item: any, status: any) => {
-      console.log('Uploaded File Details:', item);
+      // console.log('Uploaded File Details:', item);
       this.toastr.success('File successfully uploaded!');
     };
   }
